@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\Caroline\Downloads\10-graph_test.zip"/>
+			<item value="C:\Users\Caroline\Downloads\search-student.zip"/>
+			<item value="C:\Users\Caroline\Downloads\heapsort-student.zip"/>
+			<item value="C:\Users\USER\Downloads\heap-queues-student.zip"/>
+			<item value="/Users/kyuminkim/Downloads/doublyLL-code.zip"/>
+			<item value="/Users/kyuminkim/Downloads/bst-scapegoat-student.zip"/>
+			<item value="/Users/kyuminkim/Downloads/recursive-list-student.zip"/>
+			<item value="/Users/kyuminkim/Downloads/hanoi-student.zip"/>
+			<item value="/Users/kyuminkim/Downloads/postfix-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/Discussion03_Stacks/sorting-with-stacks-student.zip"/>
+			<item value="/Users/kyuminkim/Downloads/sets-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/hangman/hangman-student.zip"/>
+			<item value="/Volumes/KyuMin/CS 187 Projects/hamspam/hamspam-student.zip"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>

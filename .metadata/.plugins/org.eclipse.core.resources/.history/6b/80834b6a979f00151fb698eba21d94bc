@@ -1,0 +1,54 @@
+package sorters;
+
+import java.util.Comparator;
+
+import structures.SwapList;
+
+public class HeapSorter<T> extends AbstractSorter<T> {
+
+	public HeapSorter(SwapList<T> list, Comparator<T> comparator) {
+		super(list, comparator);
+	}
+
+	@Override
+	public SwapList<T> sort() {
+		// TODO
+		
+		/*if(list.size()<1){
+			return list;
+		}*/
+		
+		//building a heap from list
+
+		
+		
+		
+		//sort
+		for(int i=list.size()-1; i>0; i--){
+			reheap(i);
+			list.swap(i, 0);
+		}
+		
+		return list;
+	}
+	
+	private SwapList<T> reheap (int index){
+		int parent = (index-1)/2;
+		int current = index;
+		if(parent<0){
+			return list;
+		}
+		else if(list.compare(index, parent, comparator)>0){
+			while(list.compare(current, parent, comparator)>0){
+				list.swap(current, parent);
+				current = parent;
+				parent = (current-1)/2;
+			}
+			reheap(index);
+		}
+		else{
+			reheap(index-1);
+		}
+		return list;
+	}
+}

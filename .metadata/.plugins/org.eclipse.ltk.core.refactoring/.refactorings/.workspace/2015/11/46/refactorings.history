@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;disc8-doublyLL&apos; to &apos;Discussion08_DoublyLL&apos;&#x0A;- Original element: &apos;disc8-doublyLL&apos;&#x0A;- Renamed element: &apos;disc8-doublyLL&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;disc8-doublyLL&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=disc8-doublyLL" name="Discussion08_DoublyLL" references="true" stamp="1447083136457" version="1.0"/>
+</session>

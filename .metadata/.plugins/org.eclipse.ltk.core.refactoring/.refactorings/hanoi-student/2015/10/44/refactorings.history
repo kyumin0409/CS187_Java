@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Node.java&apos; to &apos;queues-student/src/structures&apos;&#x0A;- Original project: &apos;hanoi-student&apos;&#x0A;- Destination element: &apos;queues-student/src/structures&apos;&#x0A;- Original element: &apos;structures.Node.java&apos;" description="Copy compilation unit" destination="=queues-student/src&lt;structures" element1="/support&lt;structures{Node.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1445832686844" units="1" version="1.0"/>
+</session>

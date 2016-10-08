@@ -1,0 +1,410 @@
+package puzzle;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import search.SearchProblem;
+import search.Solver;
+
+/**
+ * A class to represent an instance of the eight-puzzle.
+ * 
+ * The spaces in an 8-puzzle are indexed as follows:
+ * 
+ * 0 | 1 | 2
+ * --+---+---
+ * 3 | 4 | 5
+ * --+---+---
+ * 6 | 7 | 8
+ * 
+ * The puzzle contains the eight numbers 1-8, and an empty space.
+ * If we represent the empty space as 0, then the puzzle is solved
+ * when the values in the puzzle are as follows:
+ * 
+ * 1 | 2 | 3
+ * --+---+---
+ * 4 | 5 | 6
+ * --+---+---
+ * 7 | 8 | 0
+ * 
+ * That is, when the space at index 0 contains value 1, the space 
+ * at index 1 contains value 2, and so on.
+ * 
+ * From any given state, you can swap the empty space with a space 
+ * adjacent to it (that is, above, below, left, or right of it,
+ * without wrapping around).
+ * 
+ * For example, if the empty space is at index 2, you may swap
+ * it with the value at index 1 or 5, but not any other index.
+ * 
+ * Only half of all possible puzzle states are solvable! See:
+ * https://en.wikipedia.org/wiki/15_puzzle
+ * for details.
+ * 
+
+ * @author liberato
+ *
+ */
+public class EightPuzzle implements SearchProblem<List<Integer>> {
+	
+	List<Integer> initial;
+	
+	/**
+	 * Creates a new instance of the 8 puzzle with the given starting values.
+	 * 
+	 * The values are indexed as described above, and should contain exactly the
+	 * nine integers from 0 to 8.
+	 * 
+	 * @param startingValues
+	 *            the starting values, 0 -- 8
+	 * @throws IllegalArgumentException
+	 *             if startingValues is invalid
+	 */
+	public EightPuzzle(List<Integer> startingValues) throws IllegalArgumentException{
+		// TODO
+		if(startingValues.size()!=9){
+			throw new IllegalArgumentException();
+		}
+		for(int i = 0; i<=8; i++){
+			boolean exists = false;
+			for(int j = 0; j<startingValues.size(); j++){
+				if(i==startingValues.get(j)){
+					exists = true;
+					break;
+				}
+			}
+			if(exists == false){
+				throw new IllegalArgumentException();
+			}
+		}
+		
+		initial = startingValues;
+	}
+
+	@Override
+	public List<Integer> getInitialState() {
+		// TODO
+		return initial;
+	}
+
+	@Override
+	public List<List<Integer>> getSuccessors(List<Integer> currentState) {
+		// TODO
+		List<List<Integer>> successors = new ArrayList<List<Integer>>();
+		int i = currentState.indexOf(0);
+		if(i==0){
+			
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(1));
+			a.add(currentState.get(0));
+			for(int j=2; j<=8; j++){
+				a.add(currentState.get(j));
+			}
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(3));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(0));
+			for(int j=4; j<=8; j++){
+				b.add(currentState.get(j));
+			}
+			successors.add(b);
+
+		}
+		if(i==1){
+			
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(1));
+			a.add(currentState.get(0));
+			for(int j=2; j<=8; j++){
+				a.add(currentState.get(j));
+			}
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(4));
+			b.add(currentState.get(2));
+			b.add(currentState.get(3));
+			b.add(currentState.get(1));
+			for(int j=5; j<=8; j++){
+				b.add(currentState.get(j));
+			}
+			successors.add(b);
+			
+			List<Integer> c = new ArrayList<Integer>();
+			c.add(currentState.get(0));
+			c.add(currentState.get(2));
+			c.add(currentState.get(1));
+			for(int j=3; j<=8; j++){
+				c.add(currentState.get(j));
+			}
+			successors.add(c);
+		}
+		if(i==2){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(2));
+			a.add(currentState.get(1));
+			for(int j=3; j<=8; j++){
+				a.add(currentState.get(j));
+			}
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(5));
+			b.add(currentState.get(3));
+			b.add(currentState.get(4));
+			b.add(currentState.get(2));
+			b.add(currentState.get(6));
+			b.add(currentState.get(7));
+			b.add(currentState.get(8));
+			successors.add(b);
+		}
+		
+		if(i==3){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(3));
+			a.add(currentState.get(1));
+			a.add(currentState.get(2));
+			a.add(currentState.get(0));
+			a.add(currentState.get(4));
+			a.add(currentState.get(5));
+			a.add(currentState.get(6));
+			a.add(currentState.get(7));
+			a.add(currentState.get(8));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(4));
+			b.add(currentState.get(3));
+			b.add(currentState.get(5));
+			b.add(currentState.get(6));
+			b.add(currentState.get(7));
+			b.add(currentState.get(8));
+			successors.add(b);
+			
+			List<Integer> c = new ArrayList<Integer>();
+			c.add(currentState.get(0));
+			c.add(currentState.get(1));
+			c.add(currentState.get(2));
+			c.add(currentState.get(6));
+			c.add(currentState.get(4));
+			c.add(currentState.get(5));
+			c.add(currentState.get(3));
+			c.add(currentState.get(7));
+			c.add(currentState.get(8));
+			successors.add(c);
+			
+		}
+		if(i==4){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(4));
+			a.add(currentState.get(2));
+			a.add(currentState.get(3));
+			a.add(currentState.get(1));
+			a.add(currentState.get(5));
+			a.add(currentState.get(6));
+			a.add(currentState.get(7));
+			a.add(currentState.get(8));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(4));
+			b.add(currentState.get(3));
+			b.add(currentState.get(5));
+			b.add(currentState.get(6));
+			b.add(currentState.get(7));
+			b.add(currentState.get(8));
+			successors.add(b);
+			
+			List<Integer> c = new ArrayList<Integer>();
+			c.add(currentState.get(0));
+			c.add(currentState.get(1));
+			c.add(currentState.get(2));
+			c.add(currentState.get(3));
+			c.add(currentState.get(5));
+			c.add(currentState.get(4));
+			c.add(currentState.get(6));
+			c.add(currentState.get(7));
+			c.add(currentState.get(8));
+			successors.add(c);
+			
+			List<Integer> d = new ArrayList<Integer>();
+			d.add(currentState.get(0));
+			d.add(currentState.get(1));
+			d.add(currentState.get(2));
+			d.add(currentState.get(3));
+			d.add(currentState.get(7));
+			d.add(currentState.get(5));
+			d.add(currentState.get(6));
+			d.add(currentState.get(4));
+			d.add(currentState.get(8));
+			successors.add(d);
+
+		}
+		if(i==5){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(1));
+			a.add(currentState.get(5));
+			a.add(currentState.get(3));
+			a.add(currentState.get(4));
+			a.add(currentState.get(2));
+			a.add(currentState.get(6));
+			a.add(currentState.get(7));
+			a.add(currentState.get(8));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(3));
+			b.add(currentState.get(5));
+			b.add(currentState.get(4));
+			b.add(currentState.get(6));
+			b.add(currentState.get(7));
+			b.add(currentState.get(8));
+			successors.add(b);
+			
+			List<Integer> c = new ArrayList<Integer>();
+			c.add(currentState.get(0));
+			c.add(currentState.get(1));
+			c.add(currentState.get(2));
+			c.add(currentState.get(3));
+			c.add(currentState.get(4));
+			c.add(currentState.get(8));
+			c.add(currentState.get(6));
+			c.add(currentState.get(7));
+			c.add(currentState.get(5));
+			successors.add(c);
+
+		}
+		if(i==6){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(1));
+			a.add(currentState.get(2));
+			a.add(currentState.get(6));
+			a.add(currentState.get(4));
+			a.add(currentState.get(5));
+			a.add(currentState.get(3));
+			a.add(currentState.get(7));
+			a.add(currentState.get(8));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(3));
+			b.add(currentState.get(4));
+			b.add(currentState.get(5));
+			b.add(currentState.get(7));
+			b.add(currentState.get(6));
+			b.add(currentState.get(8));
+			successors.add(b);
+
+		}
+		if(i==7){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(1));
+			a.add(currentState.get(2));
+			a.add(currentState.get(3));
+			a.add(currentState.get(4));
+			a.add(currentState.get(5));
+			a.add(currentState.get(7));
+			a.add(currentState.get(6));
+			a.add(currentState.get(8));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(3));
+			b.add(currentState.get(7));
+			b.add(currentState.get(5));
+			b.add(currentState.get(6));
+			b.add(currentState.get(4));
+			b.add(currentState.get(8));
+			successors.add(b);
+			
+			List<Integer> c = new ArrayList<Integer>();
+			c.add(currentState.get(0));
+			c.add(currentState.get(1));
+			c.add(currentState.get(2));
+			c.add(currentState.get(3));
+			c.add(currentState.get(4));
+			c.add(currentState.get(5));
+			c.add(currentState.get(6));
+			c.add(currentState.get(8));
+			c.add(currentState.get(7));
+			successors.add(c);
+
+		}
+		if(i==8){
+			List<Integer> a = new ArrayList<Integer>();
+			a.add(currentState.get(0));
+			a.add(currentState.get(1));
+			a.add(currentState.get(2));
+			a.add(currentState.get(3));
+			a.add(currentState.get(4));
+			a.add(currentState.get(8));
+			a.add(currentState.get(6));
+			a.add(currentState.get(7));
+			a.add(currentState.get(5));
+			successors.add(a);
+			
+			List<Integer> b = new ArrayList<Integer>();
+			b.add(currentState.get(0));
+			b.add(currentState.get(1));
+			b.add(currentState.get(2));
+			b.add(currentState.get(3));
+			b.add(currentState.get(4));
+			b.add(currentState.get(5));
+			b.add(currentState.get(6));
+			b.add(currentState.get(8));
+			b.add(currentState.get(7));
+			successors.add(b);
+
+		}
+		return successors;
+	}
+
+	@Override
+	public boolean isGoal(List<Integer> state) {
+		// TODO
+		for(int i=0; i<=7; i++){
+			if(state.get(i)!=i+1)
+				return false;
+		}
+		if(state.get(8)!=0)
+			return false;
+		return true;
+	}
+
+	public static void main(String[] args) {
+		//EightPuzzle e = new EightPuzzle(Arrays.asList(new Integer[] { 1, 2, 3, 4, 0, 6, 7, 5, 8 }));
+		EightPuzzle e = new EightPuzzle(Arrays.asList(new Integer[] { 1,5,0,8,3,2,4,7,6 }));
+
+		List<List<Integer>> r = new Solver<List<Integer>>(e).solveWithBFS();
+		for (List<Integer> l : r) {
+			System.out.println(l);
+		}
+	}
+}

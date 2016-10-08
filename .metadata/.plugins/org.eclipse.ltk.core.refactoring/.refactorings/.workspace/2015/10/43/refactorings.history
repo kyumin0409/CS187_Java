@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Fibonacci&apos; to &apos;Discussion05_Fibonacci&apos;&#x0A;- Original element: &apos;Fibonacci&apos;&#x0A;- Renamed element: &apos;Fibonacci&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Fibonacci&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Fibonacci" name="Discussion05_Fibonacci" references="true" stamp="1445312304979" version="1.0"/>
+</session>

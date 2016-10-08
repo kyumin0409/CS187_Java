@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="132" key="DIALOG_Y_ORIGIN"/>
+		<item value="567" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
+		<item value="true" key="actionSetFilter"/>
+		<item value="true" key="uncategorizedFilter"/>
+		<item value="true" key="internalFilter"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="657" key="dialogHeight"/>
+		<item value="1050" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.ZipFile" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="E:\CS 187 Projects\sorting-kata\sorting-kata-student.zip"/>
+			<item value="E:\CS 187 Projects\search\search-student.zip"/>
+			<item value="E:\CS 187 Projects\heap-queues\haep-queues-student.zip"/>
+			<item value="/Volumes/KYUMIN 1/CS 187 Projects/bst-scapegoat/bst-scapegoat-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/recursive list/recursive-list-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/queues/queues-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/queues/queue-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/hanoi/hanoi-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/postfix/postfix-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/sets/sets-student.zip"/>
+			<item value="/Volumes/KYUMIN/CS 187 Projects/hangman/hangman-student.zip"/>
+			<item value="/Volumes/KyuMin/CS 187 Projects/hamspam/hamspam-student.zip"/>
+		</list>
+	</section>
+</section>
